@@ -1,8 +1,8 @@
 {
-  "name": "somnidrive",
+  "name": "AuroresBoreales",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://samyiss.github.io/SomniDrive/",
+  "homepage": "https://samyiss.github.io/AuroresBoreales/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.1.0",
     "@fortawesome/react-fontawesome": "^3.1.1",

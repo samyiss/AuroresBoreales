@@ -170,7 +170,7 @@
 
 /* Checked state */
 .switch input:checked + .slide {
-  background-color: #000000; /* green */
+  background-color: #00cb09; /* green */
 }
 
 .switch input:checked + .slide::before {

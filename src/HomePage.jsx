@@ -133,6 +133,7 @@ export function HomePage() {
 
 
     const [age, setAge] = useState(35);
+    const [sexe, setSexe] = useState("Femme");
     const [height, setHeight] = useState(165);
     const [weight, setWeight] = useState(62);
     const [imc, setImc] = useState(22.8);
@@ -143,18 +144,26 @@ export function HomePage() {
     const [drugIntensity, setDrugIntensity] = useState(4);
 
 
-
     const pointAge = age < 55 ? 0 : age < 65 ? 1 : 2;
     const pointPrise = isPrise ? 4 : 0;
     const pointHepatic = isHepatic ? 3 : 0;
     const pointSleep = isSleep ? 5 : 0;
-    const pointAlcohol = alcoholIntake > 1 ? 3 : 0;
 
+    let pointAlcohol = 0;
+    if (
+        (sexe === "Homme" && alcoholIntake > 2) || (sexe === "Femme" && alcoholIntake > 1)
+    ) pointAlcohol = 3;
 
     const totalPoints =
         pointAge + imcPoint + drugIntensity + pointPrise +
         pointAlcohol + pointHepatic + pointSleep;
 
+
+    useEffect(
+        () => {
+            console.log(sexe)
+        }, [sexe]
+    )
 
 
     const getResult =
@@ -185,6 +194,7 @@ export function HomePage() {
     }, [weight, height]);
 
     function resetBtn() {
+        setSexe("Femme");
         setAge(35);
         setHeight(165);
         setWeight(62);
@@ -233,7 +243,10 @@ export function HomePage() {
 
                                 <div className="control is-expanded">
                                     <div className="select is-fullwidth custom-select">
-                                        <select>
+                                        <select
+                                            value={sexe}
+                                            onChange={(e) => setSexe(e.target.value)}
+                                        >
                                             <option>Femme</option>
                                             <option>Homme</option>
                                         </select>
@@ -364,7 +377,8 @@ export function HomePage() {
                                     <input className="input" type="number" value={alcoholIntake} min="0" step="1"
                                            onChange={(e) => setAlcoholIntake(Number(e.target.value))}/>
 
-                                    <p className="has-text-grey is-size-7">Seuil: > 1 verres/j → +3</p>
+                                    <p className="has-text-grey is-size-7 pt-1">Seuil Homme: > 2 verres/j → +3</p>
+                                    <p className="has-text-grey is-size-7">Seuil Femme: > 1 verres/j → +3</p>
                                 </div>
                             </div>
                         </div>
@@ -374,7 +388,7 @@ export function HomePage() {
                                 <div className="subtle-border-sm flex">
                                     <div className="columns is-vcentered is-mobile">
                                         <div className="column">
-                                            <p className="has-text-black has-text-weight-semibold" style={{fontSize: "15px"}}> Atteinte hépatique </p>
+                                            <p className="has-text-black has-text-weight-semibold" style={{fontSize: "15px"}}> Insuffisance hépatique </p>
                                             <p className="has-text-grey is-size-7">+3 si oui</p>
                                         </div>
                                         <div className="column is-narrow">
@@ -462,7 +476,7 @@ export function HomePage() {
                                             Alcool
                                         </p>
                                         <p className="has-text-black" style={{ fontSize: "15px" }}>
-                                            Atteinte hépatique
+                                            Insuffisance hépatique
                                         </p>
                                         <p className="has-text-black" style={{ fontSize: "15px" }}>
                                             Somnolence au volant (ATCD)
@@ -485,7 +499,7 @@ export function HomePage() {
                                             {pointAlcohol} {/* Alcool*/}
                                         </p>
                                         <p className="has-text-black has-text-weight-semibold" style={{ fontSize: "15px" }}>
-                                            {pointHepatic} {/* Atteinte hépatique*/}
+                                            {pointHepatic} {/* Insuffisance hépatique*/}
                                         </p>
                                         <p className="has-text-black has-text-weight-semibold" style={{ fontSize: "15px" }}>
                                             {pointSleep} {/* Somnolence au volant (ATCD)*/}
