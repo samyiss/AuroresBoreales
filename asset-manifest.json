@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/SomniDrive/static/css/main.9a245415.css",
-    "main.js": "/SomniDrive/static/js/main.262b3923.js",
-    "static/js/453.6748dbf7.chunk.js": "/SomniDrive/static/js/453.6748dbf7.chunk.js",
-    "index.html": "/SomniDrive/index.html",
-    "main.9a245415.css.map": "/SomniDrive/static/css/main.9a245415.css.map",
-    "main.262b3923.js.map": "/SomniDrive/static/js/main.262b3923.js.map",
-    "453.6748dbf7.chunk.js.map": "/SomniDrive/static/js/453.6748dbf7.chunk.js.map"
+    "main.css": "/AuroresBoreales/static/css/main.a5ec311c.css",
+    "main.js": "/AuroresBoreales/static/js/main.e564391f.js",
+    "static/js/453.95d83b19.chunk.js": "/AuroresBoreales/static/js/453.95d83b19.chunk.js",
+    "index.html": "/AuroresBoreales/index.html",
+    "main.a5ec311c.css.map": "/AuroresBoreales/static/css/main.a5ec311c.css.map",
+    "main.e564391f.js.map": "/AuroresBoreales/static/js/main.e564391f.js.map",
+    "453.95d83b19.chunk.js.map": "/AuroresBoreales/static/js/453.95d83b19.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9a245415.css",
-    "static/js/main.262b3923.js"
+    "static/css/main.a5ec311c.css",
+    "static/js/main.e564391f.js"
   ]
 }
