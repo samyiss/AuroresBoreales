@@ -119,7 +119,7 @@ const DRUGS = [
         name: "Lemborexant",
         brand: "Dayvigo",
         halfLife: "17–19 h",
-        intensity: 4
+        intensity: 1
     }
 ];
 
@@ -208,7 +208,7 @@ export function HomePage() {
 
     return (
         <main className="p-5 has-background-white-ter">
-            <div className="columns pt-6 has-text-centered">
+            <div className="columns pt-6 has-text-centered-mobile is-fullwidth">
                 <svg
                     className="pb-4"
                     width="54"
@@ -227,8 +227,8 @@ export function HomePage() {
                     <circle cx="17" cy="17" r="2"></circle>
                 </svg>
 
-                <p className="title has-text-weight-bold has-text-black">
-                    SomniDrive Risk — Calculateur
+                <p className="title has-text-weight-bold has-text-black pb-5">
+                    SomniDrive Risk — Calculateur <span className="has-text-weight-bold has-text-danger-dark">(Application non-valide)</span>
                 </p>
             </div>
 
